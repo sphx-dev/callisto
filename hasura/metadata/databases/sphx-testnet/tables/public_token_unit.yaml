@@ -1,0 +1,22 @@
+table:
+  name: token_unit
+  schema: public
+object_relationships:
+  - name: token
+    using:
+      foreign_key_constraint_on: token_name
+  - name: token_price
+    using:
+      foreign_key_constraint_on:
+        column: unit_name
+        table:
+          name: token_price
+          schema: public
+array_relationships:
+  - name: token_price_histories
+    using:
+      foreign_key_constraint_on:
+        column: unit_name
+        table:
+          name: token_price_history
+          schema: public

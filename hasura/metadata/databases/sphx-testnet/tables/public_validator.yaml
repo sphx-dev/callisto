@@ -1,0 +1,68 @@
+table:
+  name: validator
+  schema: public
+object_relationships:
+  - name: validator_commission
+    using:
+      foreign_key_constraint_on:
+        column: validator_address
+        table:
+          name: validator_commission
+          schema: public
+  - name: validator_description
+    using:
+      foreign_key_constraint_on:
+        column: validator_address
+        table:
+          name: validator_description
+          schema: public
+  - name: validator_info
+    using:
+      foreign_key_constraint_on:
+        column: consensus_address
+        table:
+          name: validator_info
+          schema: public
+  - name: validator_status
+    using:
+      foreign_key_constraint_on:
+        column: validator_address
+        table:
+          name: validator_status
+          schema: public
+  - name: validator_voting_power
+    using:
+      foreign_key_constraint_on:
+        column: validator_address
+        table:
+          name: validator_voting_power
+          schema: public
+array_relationships:
+  - name: blocks
+    using:
+      foreign_key_constraint_on:
+        column: proposer_address
+        table:
+          name: block
+          schema: public
+  - name: double_sign_votes
+    using:
+      foreign_key_constraint_on:
+        column: validator_address
+        table:
+          name: double_sign_vote
+          schema: public
+  - name: pre_commits
+    using:
+      foreign_key_constraint_on:
+        column: validator_address
+        table:
+          name: pre_commit
+          schema: public
+  - name: proposal_validator_status_snapshots
+    using:
+      foreign_key_constraint_on:
+        column: validator_address
+        table:
+          name: proposal_validator_status_snapshot
+          schema: public

@@ -1,0 +1,10 @@
+table:
+  name: double_sign_evidence
+  schema: public
+object_relationships:
+  - name: doubleSignVoteByVoteBId
+    using:
+      foreign_key_constraint_on: vote_b_id
+  - name: double_sign_vote
+    using:
+      foreign_key_constraint_on: vote_a_id

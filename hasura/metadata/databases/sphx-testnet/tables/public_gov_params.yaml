@@ -1,0 +1,3 @@
+table:
+  name: gov_params
+  schema: public

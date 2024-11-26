@@ -1,0 +1,3 @@
+table:
+  name: distribution_params
+  schema: public

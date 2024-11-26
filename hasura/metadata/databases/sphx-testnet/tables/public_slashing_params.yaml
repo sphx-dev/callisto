@@ -1,0 +1,3 @@
+table:
+  name: slashing_params
+  schema: public

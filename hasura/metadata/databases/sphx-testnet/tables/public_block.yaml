@@ -1,0 +1,36 @@
+table:
+  name: block
+  schema: public
+object_relationships:
+  - name: validator
+    using:
+      foreign_key_constraint_on: proposer_address
+array_relationships:
+  - name: transaction_0s
+    using:
+      foreign_key_constraint_on:
+        column: height
+        table:
+          name: transaction_0
+          schema: public
+  - name: transaction_6s
+    using:
+      foreign_key_constraint_on:
+        column: height
+        table:
+          name: transaction_6
+          schema: public
+  - name: transactions
+    using:
+      foreign_key_constraint_on:
+        column: height
+        table:
+          name: transaction
+          schema: public
+  - name: validator_voting_powers
+    using:
+      foreign_key_constraint_on:
+        column: height
+        table:
+          name: validator_voting_power
+          schema: public

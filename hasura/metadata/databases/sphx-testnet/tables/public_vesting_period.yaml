@@ -1,0 +1,7 @@
+table:
+  name: vesting_period
+  schema: public
+object_relationships:
+  - name: vesting_account
+    using:
+      foreign_key_constraint_on: vesting_account_id

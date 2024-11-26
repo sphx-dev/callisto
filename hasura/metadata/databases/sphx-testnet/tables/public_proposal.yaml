@@ -1,0 +1,50 @@
+table:
+  name: proposal
+  schema: public
+object_relationships:
+  - name: account
+    using:
+      foreign_key_constraint_on: proposer_address
+  - name: proposal_staking_pool_snapshot
+    using:
+      foreign_key_constraint_on:
+        column: proposal_id
+        table:
+          name: proposal_staking_pool_snapshot
+          schema: public
+  - name: proposal_tally_result
+    using:
+      foreign_key_constraint_on:
+        column: proposal_id
+        table:
+          name: proposal_tally_result
+          schema: public
+  - name: software_upgrade_plan
+    using:
+      foreign_key_constraint_on:
+        column: proposal_id
+        table:
+          name: software_upgrade_plan
+          schema: public
+array_relationships:
+  - name: proposal_deposits
+    using:
+      foreign_key_constraint_on:
+        column: proposal_id
+        table:
+          name: proposal_deposit
+          schema: public
+  - name: proposal_validator_status_snapshots
+    using:
+      foreign_key_constraint_on:
+        column: proposal_id
+        table:
+          name: proposal_validator_status_snapshot
+          schema: public
+  - name: proposal_votes
+    using:
+      foreign_key_constraint_on:
+        column: proposal_id
+        table:
+          name: proposal_vote
+          schema: public

@@ -1,0 +1,3 @@
+table:
+  name: community_pool
+  schema: public

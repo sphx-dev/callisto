@@ -1,0 +1,37 @@
+table:
+  name: message
+  schema: public
+object_relationships:
+  - name: message_type
+    using:
+      foreign_key_constraint_on: type
+  - name: transaction
+    using:
+      manual_configuration:
+        column_mapping:
+          partition_id: partition_id
+          transaction_hash: hash
+        insertion_order: null
+        remote_table:
+          name: transaction
+          schema: public
+  - name: transaction_0
+    using:
+      manual_configuration:
+        column_mapping:
+          partition_id: partition_id
+          transaction_hash: hash
+        insertion_order: null
+        remote_table:
+          name: transaction_0
+          schema: public
+  - name: transaction_6
+    using:
+      manual_configuration:
+        column_mapping:
+          partition_id: partition_id
+          transaction_hash: hash
+        insertion_order: null
+        remote_table:
+          name: transaction_6
+          schema: public
